@@ -61,21 +61,21 @@ const EditorAndPreviewer = () => {
 
     return (
         <>
-            <div ref={editorWrapper} id="editor" className="editor">
+            <div ref={editorWrapper} id="editorWrapper" className="editorWrapper">
                 <div className="title-bar">
                     <p></p>
                     <p>Editor</p>
                     <img ref={editorIcon} src={Extend} alt="hide" onClick={extendEditor}/>
                 </div>
-                <textarea ref={editor} onChange={(event)=>{updateEditorText(event)}} type="text" value={editorText}></textarea>
+                <textarea ref={editor} id="editor" onChange={(event)=>{updateEditorText(event)}} type="text" value={editorText}></textarea>
             </div>
-            <div ref={previewer} id="previewer" className="previewer">
+            <div ref={previewer} id="previewerWrapper" className="previewerWrapper">
                 <div className="title-bar">
                     <p></p>
                     <p>Previewer</p>
                     <img ref={previewerIcon} src={Extend} alt="hide" onClick={extendPreviewer}/>
                 </div>
-            <div ref={preview} className="content" dangerouslySetInnerHTML={{__html:marked(editorText)}}></div>
+            <div ref={preview} id="preview" className="preview" dangerouslySetInnerHTML={{__html:marked(editorText)}}></div>
             </div>
         </>
     );
